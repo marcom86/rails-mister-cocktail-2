@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Secret Keys
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Frontend
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
