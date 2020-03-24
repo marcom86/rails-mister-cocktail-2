@@ -8,10 +8,11 @@
       <h2 align="center"><%= @cocktail.name %></h2>
     </div>
 
-    <div class="card-show flex">
-
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="ingredients">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 ">
+        <%= cl_image_tag @cocktail.photo.key , class: "img-responsive" %>
+      </div>
+      <div class="col-xs-12 col-md-6 ingredients">
         <h5>Ingredients</h5>
         <% @cocktail.doses.each do |dose| %>
           <div class="ingredient flex">

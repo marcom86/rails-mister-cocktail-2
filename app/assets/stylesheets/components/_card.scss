@@ -2,19 +2,26 @@
   display:table;
   height:300px;
   margin: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cocktail-name {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  padding: 20px;
 }
 
 .cocktail-link {
-  color: black;
+  color: white;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 1px 1px black;
+  font-size: 22px;
+  font-family: 'Limelight', cursive;
 
   &:hover {
-    color:black;
+    color:white;
     text-decoration: none;
   }
 }
