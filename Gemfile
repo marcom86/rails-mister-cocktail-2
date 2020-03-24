@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # Secret Keys
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Image Upload
+gem 'cloudinary', '~> 1.12.0'
+
 # Frontend
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

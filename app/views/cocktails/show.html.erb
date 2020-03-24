@@ -10,7 +10,7 @@
 
     <div class="card-show flex">
 
-      <img src="https://www.gustissimo.it/articoli/drink/cocktail-famosi/cuba-libre.jpg" />
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="ingredients">
         <h5>Ingredients</h5>
         <% @cocktail.doses.each do |dose| %>
