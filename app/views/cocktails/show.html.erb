@@ -1,0 +1,34 @@
+<div id="wrapper">
+
+  <%= render "shared/navbar" %>
+
+  <div id="content" class="container container-show">
+
+    <div class="title">
+      <h2 align="center"><%= @cocktail.name %></h2>
+    </div>
+
+    <div class="card-show flex">
+
+      <img src="https://www.gustissimo.it/articoli/drink/cocktail-famosi/cuba-libre.jpg" />
+      <div class="ingredients">
+        <h5>Ingredients</h5>
+        <% @cocktail.doses.each do |dose| %>
+          <div class="ingredient flex">
+            <p><%= dose.description %></p>
+            <p class="ml-15"><%= dose.ingredient.name %></p>
+            <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, dose,
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "trash ml-15" %>
+          </div>
+        <% end %>
+        <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+      </div>
+
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+
+</div>
+

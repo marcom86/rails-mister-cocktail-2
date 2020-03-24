@@ -1,0 +1,21 @@
+<div id="wrapper">
+
+  <%= render "shared/navbar" %>
+
+  <!-- <h1>Cocktails</h1> -->
+
+  <div class="container">
+    <div class="cards">
+
+      <% @cocktails.each do |cocktail| %>
+        <div class="card">
+          <p class="cocktail-name"><%= link_to cocktail.name, cocktail_path(cocktail), class: "cocktail-link" %></p>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+
+</div>

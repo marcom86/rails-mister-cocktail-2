@@ -1,0 +1,23 @@
+<div id="wrapper">
+
+  <%= render "shared/navbar" %>
+
+  <div id="content" class="container">
+
+    <div class="title">
+      <h2><%= @cocktail.doses.name %></h2>
+    </div>
+
+    <div class="form">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.button :submit, class: "btn-black" %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+
+</div>
+
