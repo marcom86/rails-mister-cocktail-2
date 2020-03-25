@@ -2,34 +2,37 @@
 
   <%= render "shared/navbar" %>
 
-  <div id="content" class="container container-show">
+  <div id="content" class="container">
 
     <div class="title">
-      <h2 align="center"><%= @cocktail.name %></h2>
+        <h2 align="center"><%= @cocktail.name %></h2>
     </div>
 
-    <div class="row">
-      <div class="col-xm-12 col-md-6 no-padding">
-        <%= cl_image_tag @cocktail.photo.key , class: "img-responsive" %>
-      </div>
-      <div class="col-xm-12 col-md-6 ingredients">
-        <h5>Ingredients</h5>
-        <% @cocktail.doses.each do |dose| %>
-          <div class="ingredient flex">
-            <p><%= dose.description %></p>
-            <p class="ml-15"><%= dose.ingredient.name %></p>
-            <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, dose,
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "trash ml-15" %>
+    <div class="card mb-3" style="max-width: 800px;">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <%= cl_image_tag @cocktail.photo.key , class: "img-responsive" %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5>Ingredients</h5>
+            <% @cocktail.doses.each do |dose| %>
+              <div class="ingredient flex">
+                <p><%= dose.description %></p>
+                <p class="ml-15"><%= dose.ingredient.name %></p>
+                <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, dose,
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "trash ml-15" %>
+              </div>
+            <% end %>
+            <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
           </div>
-        <% end %>
-        <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+        </div>
       </div>
-
     </div>
+
   </div>
 
   <%= render "shared/footer" %>
 
 </div>
-
