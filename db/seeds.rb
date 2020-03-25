@@ -8,10 +8,12 @@
 require 'json'
 require 'open-uri'
 
-Cocktail.destroy_all if Rails.env.development?
+# Cocktail.destroy_all if Rails.env.development?
+Cocktail.destroy_all
 puts "Destroying all Cocktails"
 
-Ingredient.destroy_all if Rails.env.development?
+Ingredient.destroy_all
+# Ingredient.destroy_all if Rails.env.development?
 puts "Destroying all Ingredients"
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
