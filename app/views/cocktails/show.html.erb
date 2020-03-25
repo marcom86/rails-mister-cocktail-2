@@ -2,20 +2,20 @@
 
   <%= render "shared/navbar" %>
 
-  <div id="content" class="container">
+  <div id="content" align="center">
 
     <div class="title">
         <h2 align="center"><%= @cocktail.name %></h2>
     </div>
 
-    <div class="card mb-3" style="max-width: 800px;">
+    <div class="card mb-3" style="max-width: 1000px;">
       <div class="row no-gutters">
         <div class="col-md-6">
-          <%= cl_image_tag @cocktail.photo.key , class: "img-responsive" %>
+          <%= cl_image_tag @cocktail.photo.key , class: "img-responsive img-show" %>
         </div>
         <div class="col-md-6">
-          <div class="card-body">
-            <h5>Ingredients</h5>
+          <div class="card-body ingredients">
+            <h5 align="left">Ingredients</h5>
             <% @cocktail.doses.each do |dose| %>
               <div class="ingredient flex">
                 <p><%= dose.description %></p>
@@ -25,7 +25,7 @@
                   data: { confirm: "Are you sure?" }, class: "trash ml-15" %>
               </div>
             <% end %>
-            <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+            <p align="left"><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
           </div>
         </div>
       </div>
